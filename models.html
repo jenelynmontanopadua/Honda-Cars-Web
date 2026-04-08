@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Models - JE Automotive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Images/JE-LOGOO.png" alt="JE Logo"> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="models.html" class="dropbtn" style="color: #ffd700;">Models <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="openCategory('all')">All Models</a>
+                    <a href="#" onclick="openCategory('sedan')">Sedan</a>
+                    <a href="#" onclick="openCategory('hatch')">Hatchback</a>
+                    <a href="#" onclick="openCategory('suv')">SUV</a>
+                    <a href="#" onclick="openCategory('mpv')">MPV</a>
+                    <a href="#" onclick="openCategory('truck')">Truck</a>
+                    <a href="#" onclick="openCategory('motorcycle')">Motorcycles</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+        <h1 class="models-title">OUR <span>HONDA</span> LINEUP</h1>
+
+        <div id="selection-screen" class="category-grid">
+            <div class="cat-card" onclick="openCategory('sedan')">
+                <video autoplay muted loop playsinline src="Videos/sedan.mp4"></video>
+                <div class="cat-overlay"><h3>SEDAN</h3></div>
+            </div>
+            <div class="cat-card" onclick="openCategory('hatch')">
+                <video autoplay muted loop playsinline src="Videos/hatch.mp4"></video>
+                <div class="cat-overlay"><h3>HATCHBACK</h3></div>
+            </div>
+            <div class="cat-card" onclick="openCategory('suv')">
+                <video autoplay muted loop playsinline src="Videos/suv.mp4"></video>
+                <div class="cat-overlay"><h3>SUV</h3></div>
+            </div>
+            <div class="cat-card" onclick="openCategory('mpv')">
+                <video autoplay muted loop playsinline src="Videos/mpv.mp4"></video>
+                <div class="cat-overlay"><h3>MPV</h3></div>
+            </div>
+            <div class="cat-card" onclick="openCategory('truck')">
+                <video autoplay muted loop playsinline src="Videos/truck.mp4"></video>
+                <div class="cat-overlay"><h3>TRUCK</h3></div>
+            </div>
+            <div class="cat-card" onclick="openCategory('motorcycle')">
+                <video autoplay muted loop playsinline src="Videos/motor.mp4"></video>
+                <div class="cat-overlay"><h3>MOTORCYCLE</h3></div>
+            </div>
+        </div>
+
+        <div id="models-screen" style="display: none;">
+    <div class="category-info-header" style="max-width: 1200px; margin-top:-30px; padding: 10px;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+         <button class="back-arrow-btn" onclick="goBack()">
+    <i class="fa-solid fa-arrow-left"></i>
+    </button>
+            <h2 id="category-label" style="font-family: 'Oswald', sans-serif; color: #ffd700; margin: 0; letter-spacing: 2px; text-transform: uppercase;"></h2>
+        </div>
+        
+        <p id="category-description"></p>
+    </div>
+
+    <div id="models-container" class="models-grid">
+        
+                  <div class="model-card sedan" onclick="openModal('Honda Civic RS', 'Images/civic-rs.jpg', '₱1,583,000', 'Experience the perfect balance of heritage and innovation. The Civic RS is powered by a 1.5L VTEC Turbo engine delivering a thrilling 178 PS, while the integrated Honda SENSING suite ensures world-class safety for every journey.')">
+    <img src="Images/civic-rs.jpg" alt="Civic RS">
+    <h3>Honda Civic RS</h3>
+    <p>The legendary sport sedan with VTEC Turbo performance.</p>
+    <span class="model-price">₱1,583,000</span>
+</div>
+
+<div class="model-card sedan" onclick="openModal('Honda Civic Hybrid', 'Images/civic-hybrid.jpg', '₱1,990,000', 'Step into the future with the Civic Hybrid, featuring an advanced HEV system that prioritizes fuel efficiency without compromising sportiness. Inside, a high-definition digital cluster provides all the tech-forward data you need at a glance.')">
+    <img src="Images/civic-hybrid.jpg" alt="Civic Hybrid">
+    <h3>Honda Civic Hybrid</h3>
+    <p>The perfect mix of sportiness and eco-friendly hybrid tech.</p>
+    <span class="model-price">₱1,990,000</span>
+</div>
+
+<div class="model-card sedan" onclick="openModal('Honda Accord Hybrid', 'Images/accord-hybrid.jpg', '₱1,799,000+', 'Define executive luxury with the Accord Hybrid. This full-hybrid sedan offers a serene cabin finished with premium wood accents, complemented by safety innovations like Honda LaneWatch to keep you aware of your surroundings at all times.')">
+    <img src="Images/accord-hybrid.jpg" alt="Accord Hybrid">
+    <h3>Honda Accord Hybrid</h3>
+    <p>Advanced hybrid technology meets executive luxury.</p>
+    <span class="model-price">₱1,799,000+</span>
+</div>
+
+<div class="model-card sedan" onclick="openModal('Honda Clarity', 'Images/clarity.jpg', '₱1,450,000 (Est.)', 'A pioneer in green technology, the Clarity offers a sophisticated Fuel Cell or Plug-In Hybrid powertrain. It is engineered for those who demand superior electric performance and a sustainable, zero-emissions driving experience.')">
+    <img src="Images/clarity.jpg" alt="Clarity">
+    <h3>Honda Clarity</h3>
+    <p>Innovative zero-emissions driving for a sustainable future.</p>
+    <span class="model-price">Starting at ₱1,450,000</span>
+</div>
+<div class="model-card sedan" onclick="openModal('Honda Insight', 'Images/insight.jpg', '₱1,780,000', 'The Insight combines aerodynamic elegance with an efficient 1.5L Atkinson Cycle engine. Capable of achieving an impressive 50+ MPG, it is the ideal choice for the eco-conscious driver who refuses to settle on style.')">
+    <img src="Images/insight.jpg" alt="Insight">
+    <h3>Honda Insight</h3>
+    <p>Sophisticated hybrid sedan with a sleek, aerodynamic look.</p>
+    <span class="model-price">₱1,780,000</span>
+</div>
+
+<div class="model-card sedan" onclick="openModal('Honda Amaze', 'Images/amaze.jpg', '₱600,000+ (Est.)', 'Proof that big things come in small packages, the Honda Amaze features a compact design that is surprisingly spacious inside. Its 1.2L i-VTEC engine and class-leading boot space make it the perfect entry-level companion for your family.')">
+    <img src="Images/amaze.jpg" alt="Amaze">
+    <h3>Honda Amaze</h3>
+    <p>Big on space, compact in size. The ideal entry-level sedan.</p>
+    <span class="model-price">₱600,000+ (Est.)</span>
+</div>
+
+<div class="model-card sedan" onclick="openModal('Honda City', 'Images/city.png', '₱973,000+', 'The ultimate city dweller’s car. The Honda City delivers a smooth 121 PS from its fuel-efficient 1.5L i-VTEC engine. Now equipped with Honda SENSING, it provides peace of mind while navigating busy metropolitan streets.')">
+    <img src="Images/city.png" alt="Honda City">
+    <h3>Honda City</h3>
+    <p>Practical, fuel-efficient, and perfect for daily city driving.</p>
+    <span class="model-price">₱973,000+</span>
+</div>
+
+<div class="model-card sedan" onclick="openModal('Honda Legend', 'Images/legend.jpg', '₱3,800,000', 'Experience the pinnacle of Honda engineering with the Legend. This full-size luxury sedan features a powerful 3.5L V6 engine and the legendary SH-AWD (Super Handling All-Wheel Drive) for unmatched stability and executive comfort.')">
+    <img src="Images/legend.jpg" alt="Honda Legend">
+    <h3>Honda Legend</h3>
+    <p>Honda’s flagship luxury sedan with advanced AWD technology.</p>
+    <span class="model-price">₱3,800,000</span>
+</div>
+<div class="model-card sedan" onclick="openModal('Honda Inspire', 'Images/inspire.jpg', '₱1,650,000', 'A sophisticated variant of the Accord platform, the Inspire is tailored for the executive market. It features a sleek sport-executive design and a responsive 1.5L Turbo engine, offering a unique blend of style and performance.')">
+    <img src="Images/inspire.jpg" alt="Honda Inspire">
+    <h3>Honda Inspire</h3>
+    <p>A stylish executive sedan designed for the Chinese market.</p>
+    <span class="model-price">₱1,650,000</span>
+</div>
+<div class="model-card sedan" onclick="openModal('Honda Crider', 'Images/crider.jpg', '₱1,150,000', 'The Crider offers a bridge between the City and the Accord, focusing on maximum interior space and fuel economy. It is a practical compact sedan designed to meet the high demands of modern urban families.')">
+    <img src="Images/crider.jpg" alt="Crider">
+    <h3>Honda Crider</h3>
+    <p>A practical compact sedan positioned between City and Accord.</p>
+    <span class="model-price">₱1,150,000</span>
+</div>
+<div class="model-card sedan" onclick="openModal('Honda Ballade', 'Images/ballade.jpg', '₱1,100,000', 'Continuing the heritage of the subcompact segment, the Ballade offers a premium take on the Honda City platform. It is engineered to provide a comfortable ride, efficient performance, and modern features for select international markets.')">
+    <img src="Images/ballade.jpg" alt="Ballade">
+    <h3>Honda Ballade</h3>
+    <p>A subcompact sedan version of the Honda City for select markets.</p>
+    <span class="model-price">₱1,100,000</span>
+</div>
+<div class="model-card truck" onclick="openModal('Ridgeline Black Edition', 'Images/ridgeline-black.png', '₱4,150,000', 'This edition features a sophisticated all-black leather interior complemented by 18-inch black alloy wheels and the versatile industry-exclusive In-Bed Trunk for secure storage.')">
+    <img src="Images/ridgeline-black.png" alt="Ridgeline Black">
+    <h3>Ridgeline Black Edition</h3>
+    <p>The ultimate stealth look with premium features.</p>
+    <span class="model-price">₱4,150,000</span>
+</div>
+<div class="model-card truck" onclick="openModal('Honda Acty Truck', 'Images/acty.jpg', '₱380,000', 'A legendary JDM import, this Kei truck offers incredible utility with available 4WD, making it the perfect agile workhorse for narrow streets and light hauling.')">
+    <img src="Images/acty.jpg" alt="Acty">
+    <h3>Honda Acty Truck</h3>
+    <p>The iconic JDM mini-truck for light utility.</p>
+    <span class="model-price">₱380,000</span>
+</div>
+<div class="model-card truck" onclick="openModal('Honda Ridgeline', 'Images/ridgeline.jpg', '₱3,850,000', 'Built with a powerful 3.5L V6 engine and a smooth 9-speed automatic transmission, the Ridgeline delivers a car-like ride without sacrificing truck capability.')">
+    <img src="Images/ridgeline.jpg" alt="Ridgeline">
+    <h3>Honda Ridgeline</h3>
+    <p>The only pickup truck with a smooth car-like ride.</p>
+    <span class="model-price">₱3,850,000</span>
+</div>
+<div class="model-card hatch" onclick="openModal('Honda Civic Type R (FL5)', 'Images/civic-typer.jpg', '₱3,870,000', 'As the ultimate high-performance hatchback, the FL5 features a 2.0L VTEC Turbo engine pushing 315 PS through a precision-engineered 6-speed manual transmission.')">
+    <img src="Images/civic-typer.jpg" alt="Civic Type R">
+    <h3>Honda Civic Type R (FL5)</h3>
+    <p>The ultimate high-performance track-ready hatchback.</p>
+    <span class="model-price">₱3,870,000</span>
+</div>
+
+<div class="model-card hatch" onclick="openModal('Honda City Hatchback RS', 'Images/city-hatchback.jpg', '₱1,153,000', 'This sporty hatchback is equipped with Honda SENSING safety tech and the famous 4-Mode Ultra Seats, allowing you to configure the interior for any cargo needs.')">
+    <img src="Images/city-hatchback.jpg" alt="City Hatchback">
+    <h3>Honda City Hatchback RS</h3>
+    <p>Sporty look with the versatile Ultra-Seats technology.</p>
+    <span class="model-price">₱1,153,000</span>
+</div>
+<div class="model-card hatch" onclick="openModal('Honda Brio RS', 'Images/brio-rs.jpg', '₱827,000', 'Perfect for the city, the Brio RS features a 7-inch touchscreen and an aggressive RS body kit with 15-inch alloy wheels for a sharp, modern look.')">
+    <img src="Images/brio-rs.jpg" alt="Brio RS">
+    <h3>Honda Brio RS</h3>
+    <p>Agile, stylish, and perfect for the modern city driver.</p>
+    <span class="model-price">₱827,000</span>
+</div>
+<div class="model-card hatch" onclick="openModal('Honda Jazz (JDM/Import)', 'Images/jazz.png', '₱1,580,000', 'A true icon of versatility, the Jazz offers unparalleled interior space thanks to its Magic Seats technology, making it the most practical small car in its class.')">
+    <img src="Images/jazz.png" alt="Honda Jazz">
+    <h3>Honda Jazz (JDM/Import)</h3>
+    <p>The classic versatile hatchback icon with maximum space.</p>
+    <span class="model-price">₱1,580,000</span>
+</div>
+<div class="model-card hatch" onclick="openModal('Honda CR-Z', 'Images/crz.jpg', '₱750,000', 'This unique sports hybrid combines eco-friendly technology with a sleek 2-door hatchback design, offering a fun-to-drive manual transmission and futuristic styling.')">
+    <img src="Images/crz.jpg" alt="Honda CR-Z">
+    <h3>Honda CR-Z</h3>
+    <p>The sporty 2-door hybrid hatch with futuristic DNA.</p>
+    <span class="model-price">Starting at ₱750,000</span>
+</div>
+<div class="model-card hatch" onclick="openModal('Honda Life', 'Images/honda-life.jpeg', '₱1,250,000', 'The Honda Life offers a premium compact experience with its 1.5L i-VTEC engine and stylish dual-exhaust design, serving as a sophisticated sister model to the Fit.')">
+    <img src="Images/honda-life.jpeg" alt="Honda Life">
+    <h3>Honda Life</h3>
+    <p>A stylish and compact hatchback sister of the Fit/Jazz.</p>
+    <span class="model-price">₱1,250,000</span>
+</div>
+<div class="model-card hatch" onclick="openModal('Honda e:NP1', 'Images/enp1.jpg', '₱2,100,000', 'Stepping into the future of electric mobility, this EV hatchback offers a silent, high-tech cabin with zero emissions and a long-range battery for modern driving.')">
+    <img src="Images/enp1.jpg" alt="Honda e:NP1">
+    <h3>Honda e:NP1 (Electric)</h3>
+    <p>The next generation of Honda’s all-electric hatchback power.</p>
+    <span class="model-price">₱2,100,000</span>
+</div>
+<div class="model-card hatch" onclick="openModal('Honda N-One', 'Images/none.jpg', '₱580,000', 'A retro-inspired Kei car from Japan, the N-One packs a surprising amount of tech and safety features into a tiny footprint, making it the king of urban parking.')">
+    <img src="Images/none.jpg" alt="Honda N-One">
+    <h3>Honda N-One</h3>
+    <p>Iconic retro styling meets modern Japanese Kei car utility.</p>
+    <span class="model-price">₱580,000</span>
+</div>
+<div class="model-card suv" onclick="openModal('Honda BR-V', 'Images/brv.jpg', '₱1,090,000', 'Designed as the ultimate Filipino family vehicle, the BR-V is a versatile 7-seater that offers high ground clearance and a fuel-efficient engine perfect for both city driving and long road trips.')">
+    <img src="Images/brv.jpg" alt="Honda BR-V">
+    <h3>Honda BR-V</h3>
+    <p>The affordable and reliable 7-seater family choice.</p>
+    <span class="model-price">₱1,090,000</span>
+</div>
+
+<div class="model-card suv" onclick="openModal('Honda HR-V Turbo RS', 'Images/hrv.jpg', '₱1,739,000', 'The HR-V Turbo RS combines a sleek coupe-inspired silhouette with a powerful 1.5L VTEC Turbo engine, delivering a sporty driving experience backed by the full Honda SENSING safety suite.')">
+    <img src="Images/hrv.jpg" alt="HR-V Turbo">
+    <h3>Honda HR-V Turbo RS</h3>
+    <p>The sleek crossover that blends coupe style with SUV power.</p>
+    <span class="model-price">₱1,739,000</span>
+</div>
+
+<div class="model-card suv" onclick="openModal('Honda CR-V RS e:HEV', 'Images/crv-hybrid.jpg', '₱2,838,000', 'As the flagship hybrid SUV, the CR-V e:HEV features an advanced dual-motor system and Real-Time AWD, providing luxury-level comfort with exceptional fuel efficiency for the eco-conscious driver.')">
+    <img src="Images/crv-hybrid.jpg" alt="CR-V Hybrid">
+    <h3>Honda CR-V RS e:HEV</h3>
+    <p>The premium hybrid SUV for a cleaner and more powerful drive.</p>
+    <span class="model-price">₱2,838,000</span>
+</div>
+<div class="model-card suv" onclick="openModal('Honda WR-V', 'Images/wrv.jpg', '₱1,100,000', 'Small on the outside but big on adventure, the WR-V is a nimble urban SUV featuring high ground clearance and smart tech, making it the perfect companion for navigating crowded city streets.')">
+    <img src="Images/wrv.jpg" alt="Honda WR-V">
+    <h3>Honda WR-V</h3>
+    <p>Small on the outside, big on adventure. Perfect for the city.</p>
+    <span class="model-price">₱1,100,000</span>
+</div>
+
+<div class="model-card suv" onclick="openModal('Honda ZR-V', 'Images/zrv.jpg', '₱1,850,000', 'Slotted perfectly between the HR-V and CR-V, the ZR-V offers a sophisticated, car-like driving dynamic with a premium interior designed for young professionals and small families.')">
+    <img src="Images/zrv.jpg" alt="Honda ZR-V">
+    <h3>Honda ZR-V</h3>
+    <p>The sophisticated mid-size crossover with a premium feel.</p>
+    <span class="model-price">₱1,850,000</span>
+</div>
+
+<div class="model-card suv" onclick="openModal('Honda Pilot', 'Images/pilot.jpg', '₱4,000,000+', 'The Pilot stands as Honda’s largest and most luxurious SUV, featuring a robust 3.5L V6 engine and premium three-row seating for up to eight passengers to travel in absolute comfort.')">
+    <img src="Images/pilot.jpg" alt="Honda Pilot">
+    <h3>Honda Pilot</h3>
+    <p>The ultimate 8-seater luxury SUV for the whole family.</p>
+    <span class="model-price">₱4,000,000+</span>
+</div>
+
+<div class="model-card suv" onclick="openModal('Honda Passport TrailSport', 'Images/passport.jpg', '₱3,950,000', 'Built for the rugged adventurer, the 2026 Passport TrailSport features a 285-hp V6, off-road tuned suspension, and all-terrain tires, ready to take you far beyond where the paved road ends.')">
+    <img src="Images/passport.jpg" alt="Honda Passport">
+    <h3>Honda Passport TrailSport</h3>
+    <p>Built for those who love to go beyond the paved roads.</p>
+    <span class="model-price">₱3,950,000</span>
+</div>
+<div class="model-card suv" onclick="openModal('Honda Prologue', 'Images/prologue.png', '₱4,200,000', 'Honda’s first fully electric SUV, the Prologue, delivers a silent and powerful zero-emissions ride. The 2026 model features available dual-motor AWD with 300 horsepower and an 85 kWh battery providing up to 300 miles of range.')">
+    <img src="Images/prologue.png" alt="Honda Prologue">
+    <h3>Honda Prologue (EV)</h3>
+    <p>Clean, electric power in a sophisticated midsize SUV.</p>
+    <span class="model-price">₱4,200,000</span>
+</div>
+<div class="model-card mpv" onclick="openModal('Honda Odyssey', 'Images/odyssey.jpg', '₱2,825,000', 'The Honda Odyssey stands as the pinnacle of luxury minivans, offering an unparalleled first-class travel experience with its premium Ottoman captain seats, dual power sliding doors for effortless entry, and a comprehensive multi-view camera system designed to ensure the highest level of safety and convenience for both business and family trips.')">
+    <img src="Images/odyssey.jpg" alt="Odyssey">
+    <h3>Honda Odyssey</h3>
+    <p>Premium minivan designed for first-class business and family travel.</p>
+    <span class="model-price">₱2,825,000</span>
+</div>
+
+<div class="model-card mpv" onclick="openModal('Honda StepWGN', 'Images/stepwgn.jpg', '₱2,850,000', 'This innovative Japanese MPV is famous for its revolutionary Waku-Waku Gate which functions as both a wide-opening tailgate and a side-hinged door, providing an incredibly spacious and flexible interior powered by an efficient 1.5L Turbo or e:HEV hybrid powertrain for a smooth urban driving experience.')">
+    <img src="Images/stepwgn.jpg" alt="StepWGN">
+    <h3>Honda StepWGN</h3>
+    <p>Innovative Japanese MPV featuring the unique Waku-Waku gate.</p>
+    <span class="model-price">₱2,850,000 (Import)</span>
+</div>
+
+<div class="model-card mpv" onclick="openModal('Honda Freed', 'Images/freed.jpg', '₱1,680,000', 'Perfectly sized for the city, the Honda Freed is a compact yet versatile 7-seater that maximizes cabin space with its signature walk-through layout and low-floor design, making it the ideal choice for families who need the utility of a minivan without the bulky exterior dimensions.')">
+    <img src="Images/freed.jpg" alt="Honda Freed">
+    <h3>Honda Freed</h3>
+    <p>The perfect compact MPV for urban families needing extra flexibility.</p>
+    <span class="model-price">₱1,680,000 (Import)</span>
+</div>
+
+<div class="model-card mpv" onclick="openModal('Honda Mobilio RS', 'Images/mobilio.png', '₱680,000', 'The Honda Mobilio RS combines the practicality of a 7-seater MPV with the aggressive styling of a sports car, featuring a dedicated RS body kit and a nimble chassis that offers car-like handling while maintaining a highly flexible interior with one-touch tumble seats for quick cargo adjustments.')">
+    <img src="Images/mobilio.png" alt="Mobilio">
+    <h3>Honda Mobilio RS</h3>
+    <p>The sporty 7-seater that offers car-like handling and style.</p>
+    <span class="model-price">₱680,000 (Pre-owned)</span>
+</div>
+
+<div class="model-card mpv" onclick="openModal('Honda BR-V VX SENSING', 'Images/brv-vx.jpg', '₱1,390,000', 'As the most advanced variant in the lineup, the Honda BR-V VX comes equipped with the full Honda SENSING suite of safety technologies and a powerful 1.5L DOHC i-VTEC engine, wrapped in a rugged SUV-inspired body that provides 7-seater capacity and high ground clearance for any family adventure.')">
+    <img src="Images/brv-vx.jpg" alt="BR-V VX">
+    <h3>Honda BR-V VX SENSING</h3>
+    <p>The premium 7-seater with advanced safety for the whole family.</p>
+    <span class="model-price">₱1,390,000</span>
+</div>
+<div class="model-card motorcycle" onclick="openModal('Honda Click 125', 'Images/click125.png', '₱81,900', 'The Honda Click 125 remains the undisputed King of Scooters in the Philippines. For 2026, it features a liquid-cooled 125cc PGM-FI engine providing a smooth 11 hp. With its signature sporty design, full LED lighting, a digital instrument panel, and a spacious 18L luggage box, it is the ultimate daily commuter for the modern Filipino rider.')">
+    <img src="Images/click125.png" alt="Click 125">
+    <h3>Honda Click 125</h3>
+    <p>The ultimate daily commuter king.</p>
+    <span class="model-price">₱81,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Click 160', 'Images/click160.jpg', '₱122,900', 'Step up your game with the Honda Click 160. Powered by a 157cc 4-valve eSP+ engine, this scooter provides extra grunt for city overtakes. It comes equipped with a Smart Key System, a built-in USB charger, and a wider tire profile for better stability and a more aggressive stance on the road.')">
+    <img src="Images/click160.jpg" alt="Click 160">
+    <h3>Honda Click 160</h3>
+    <p>More power and premium features.</p>
+    <span class="model-price">₱122,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda PCX 160', 'Images/pcx160.jpg', '₱131,900', 'Experience sophisticated travel with the Honda PCX 160. This maxi-scooter is designed for riders who prioritize comfort and style. It features an advanced ABS system (on select variants), Honda Selectable Torque Control (HSTC) for safety on slippery roads, and a massive under-seat storage that can fit a full-face helmet.')">
+    <img src="Images/pcx160.jpg" alt="PCX 160">
+    <h3>Honda PCX 160</h3>
+    <p>Sophisticated style and maxi-comfort.</p>
+    <span class="model-price">₱131,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda ADV 160', 'Images/adv160.jpg', '₱166,900', 'The Honda ADV 160 is a unique adventure-style scooter built to handle more than just smooth pavement. With its long-travel suspension, twin sub-tank rear shocks, and rugged dual-purpose tires, it can comfortably navigate through rough city streets and light off-road trails while maintaining a premium feel.')">
+    <img src="Images/adv160.jpg" alt="ADV 160">
+    <h3>Honda ADV 160</h3>
+    <p>Adventure-ready urban explorer.</p>
+    <span class="model-price">₱166,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Airblade 160', 'Images/airblade160.jpg', '₱125,900', 'The Honda Airblade 160 is a sporty automatic bike that focuses on agility and sharp handling. Its standout feature is the dual rear shock absorbers and the front-wheel ABS, providing a more stable and safer ride during high-speed maneuvers. It is the perfect choice for riders who want a slim yet powerful scooter.')">
+    <img src="Images/airblade160.jpg" alt="Airblade 160">
+    <h3>Honda Airblade 160</h3>
+    <p>Slim, sporty, and agile performance.</p>
+    <span class="model-price">₱125,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Genio', 'Images/genio.jpg', '₱72,900', 'Designed for the younger generation, the Honda Genio combines a chic retro look with modern technology. It uses a lightweight eSAF (Enhanced Smart Architecture Frame) for better maneuverability. Its 110cc engine is incredibly fuel-efficient, making it a trendy and practical choice for students and young professionals.')">
+    <img src="Images/genio.jpg" alt="Genio">
+    <h3>Honda Genio</h3>
+    <p>Chic design for the stylish youth.</p>
+    <span class="model-price">₱72,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda BeAT', 'Images/beat.jpg', '₱71,400', 'The Honda BeAT is the go-to scooter for first-time riders. Known for its compact size and light weight, it is extremely easy to handle in heavy traffic. It boasts an impressive fuel economy of up to 58.2 km/L, ensuring that you save money while enjoying your daily ride around the city.')">
+    <img src="Images/beat.jpg" alt="BeAT">
+    <h3>Honda BeAT</h3>
+    <p>Compact, fuel-efficient, and easy to ride.</p>
+    <span class="model-price">₱71,400</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Dio', 'Images/dio.jpg', '₱63,900', 'Simple, durable, and functional—the Honda Dio is the quintessential entry-level scooter. It features a reliable 110cc air-cooled engine and a unique lead-free body parts design. With its wide seat and spacious floorboard, it is a practical workhorse for short errands and daily chores.')">
+    <img src="Images/dio.jpg" alt="Dio">
+    <h3>Honda Dio</h3>
+    <p>Practical and durable entry-level scooter.</p>
+    <span class="model-price">₱63,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Wave RSX', 'Images/waversx.jpg', '₱62,900', 'The Honda Wave RSX is a legendary underbone that has been refined for the modern era. It features a reliable 110cc PGM-FI engine that is Euro 3 compliant. Its sharp and sporty fairing design makes it look faster than ever while maintaining the legendary reliability that the Wave series is known for.')">
+    <img src="Images/waversx.jpg" alt="Wave RSX">
+    <h3>Honda Wave RSX</h3>
+    <p>The legendary and reliable commuter.</p>
+    <span class="model-price">₱62,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda XRM 125 DS', 'Images/xrmds.png', '₱71,900', 'The Honda XRM 125 Dual Sport is a Filipino icon. It is the only underbone specifically designed for both paved roads and unpaved terrains. With its high-mounted front fender and rugged tires, it has become the favorite choice for riders in provincial areas where road conditions can be unpredictable.')">
+    <img src="Images/xrmds.png" alt="XRM 125 DS">
+    <h3>Honda XRM 125 DS</h3>
+    <p>Built for the Philippine roads.</p>
+    <span class="model-price">₱71,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda RS-X 150', 'Images/rsx150.jpg', '₱109,900', 'The Honda RS-X 150 is a high-performance sports underbone designed for speed enthusiasts. It features a 6-speed DOHC engine that delivers impressive power at high RPMs. With its aggressive full-fairing design and front-wheel ABS, it offers a big-bike feel in a small and nimble package.')">
+    <img src="Images/rsx150.jpg" alt="RS-X 150">
+    <h3>Honda RS-X 150</h3>
+    <p>High-performance sports underbone.</p>
+    <span class="model-price">₱109,900</span>
+</div>
+<div class="model-card motorcycle" onclick="openModal('Honda TMX 125 Alpha', 'Images/tmx125.jpg', '₱56,900', 'The Honda TMX 125 Alpha is a legendary workhorse known for its simple push-rod engine and extreme durability. While primarily used for business and tricycle applications, its classic backbone frame has also made it the top choice for custom cafe racer and scrambler builds in the Philippines.')">
+    <img src="Images/tmx125.jpg" alt="TMX 125 Alpha">
+    <h3>Honda TMX 125 Alpha</h3>
+    <p>The legendary pambansang motor.</p>
+    <span class="model-price">₱56,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda TMX Supremo', 'Images/tmxsupremo.jpg', '₱78,900', 'For those who need more power for heavy hauling, the Honda TMX Supremo is the answer. It features a larger 150cc engine and a 5-speed constant mesh transmission. Its robust frame and heavy-duty suspension make it ideal for heavy-duty business use and long-distance deliveries.')">
+    <img src="Images/tmxsupremo.jpg" alt="TMX Supremo">
+    <h3>Honda TMX Supremo</h3>
+    <p>Heavy-duty power for business use.</p>
+    <span class="model-price">₱78,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CB150X', 'Images/cb150x.jpg', '₱173,900', 'The Honda CB150X is the perfect entry-point into the world of adventure touring. Inspired by its bigger sibling, the CB500X, it features a tall windscreen, high-set handlebars, and a comfortable upright riding position. It is designed for riders who love long-distance touring on varied road conditions.')">
+    <img src="Images/cb150x.jpg" alt="CB150X">
+    <h3>Honda CB150X</h3>
+    <p>Your entry to adventure touring.</p>
+    <span class="model-price">₱173,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CB150R Streetster', 'Images/cb150r.jpg', '₱215,000', 'The Honda CB150R Streetster is a premium naked bike that follows the Neo-Sports Café design philosophy. It is loaded with high-end parts like a 41mm inverted front fork, radial-mount brake calipers, and a fully digital LCD display. It is the most stylish and tech-packed 150cc naked bike in its class.')">
+    <img src="Images/cb150r.jpg" alt="CB150R Streetster">
+    <h3>Honda CB150R Streetster</h3>
+    <p>Neo-Sports Café premium naked bike.</p>
+    <span class="model-price">₱215,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CRF150L', 'Images/crf150l.jpg', '₱147,900', 'The Honda CRF150L is a dual-propose bike that brings the DNA of the CRF racing series to the street. It is road-legal and equipped with lights and turn signals, but its long-travel Showa suspension and 21-inch front wheel make it a highly capable machine once the pavement ends.')">
+    <img src="Images/crf150l.jpg" alt="CRF150L">
+    <h3>Honda CRF150L</h3>
+    <p>Dual-sport performance for any trail.</p>
+    <span class="model-price">₱147,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CRF300L', 'Images/crf300l.jpg', '₱269,900', 'The Honda CRF300L is a significant step up in power and capability. With its lightweight chassis and high-torque 286cc engine, it can tackle difficult enduro trails with ease. Its slim profile and agile handling make it a favorite for off-road enthusiasts who want a reliable and powerful trail bike.')">
+    <img src="Images/crf300l.jpg" alt="CRF300L">
+    <h3>Honda CRF300L</h3>
+    <p>Agile and powerful enduro machine.</p>
+    <span class="model-price">₱269,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CRF300 Rally', 'Images/crf300rally.jpg', '₱309,900', 'The Honda CRF300 Rally is inspired by the Dakar-winning CRF450 Rally. It features a larger fuel tank, a protective windshield, and a distinctive asymmetric LED headlight. It is the ultimate choice for riders who want to combine long-distance highway travel with hardcore off-road adventuring.')">
+    <img src="Images/crf300rally.jpg" alt="CRF300 Rally">
+    <h3>Honda CRF300 Rally</h3>
+    <p>The mini Dakar-inspired adventurer.</p>
+    <span class="model-price">₱309,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda XR150L', 'Images/xr150l.jpg', '₱96,900', 'The Honda XR150L is a versatile dual-sport bike that is easier to ride and maintain than its CRF counterparts. It features a lower seat height and a more comfortable riding position, making it an excellent choice for daily commuting in provinces or for beginners who want to try light off-roading.')">
+    <img src="Images/xr150l.jpg" alt="XR150L">
+    <h3>Honda XR150L</h3>
+    <p>Versatile and friendly dual-sport.</p>
+    <span class="model-price">₱96,900</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Monkey 125', 'Images/monkey125.jpg', '₱221,000', 'The Honda Monkey 125 is a fun-sized bike that brings back the 70s nostalgia. Despite its small size, it is a premium unit featuring chrome details, inverted front forks, and a modern 5-speed transmission. It is not just a motorcycle; it is a lifestyle statement that brings a smile to every rider.')">
+    <img src="Images/monkey125.jpg" alt="Monkey 125">
+    <h3>Honda Monkey 125</h3>
+    <p>Iconic retro fun in a small package.</p>
+    <span class="model-price">₱221,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Dax 125', 'Images/dax125.jpg', '₱209,000', 'The Honda Dax 125 returns with its unique T-bone pressed steel frame that gives it its signature sausage-dog look. It is designed for two-up riding and features a semi-automatic gearbox, making it a quirky and fun bike for leisurely cruises around the neighborhood or city center.')">
+    <img src="Images/dax125.jpg" alt="Dax 125">
+    <h3>Honda Dax 125</h3>
+    <p>Unique design for leisurely cruises.</p>
+    <span class="model-price">₱209,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Super Cub C125', 'Images/supercub.jpg', '₱218,000', 'The Honda Super Cub C125 is the premium evolution of the world’s most produced motor vehicle. It combines the classic timeless silhouette with high-end tech like a Smart Key System, cast wheels, and a quiet yet efficient 125cc engine. It is the pinnacle of elegance in the cub world.')">
+    <img src="Images/supercub.jpg" alt="Super Cub C125">
+    <h3>Honda Super Cub C125</h3>
+    <p>The pinnacle of cub elegance.</p>
+    <span class="model-price">₱218,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Grom', 'Images/grom.jpg', '₱130,000', 'The Honda Grom is a small bike with a big personality. Known for its endless customization possibilities, it features a sporty manual 5-speed engine and a compact chassis that makes it a blast to ride on tight city streets or kart tracks. It is the favorite of modifiers and stunt enthusiasts alike.')">
+    <img src="Images/grom.jpg" alt="Grom">
+    <h3>Honda Grom</h3>
+    <p>Small bike with a big personality.</p>
+    <span class="model-price">₱130,000</span>
+</div>
+<div class="model-card motorcycle" onclick="openModal('Honda CB750 Hornet', 'Images/cb750.jpg', '₱529,000', 'The 2025 Honda CB750 Hornet defines the modern middleweight naked class, featuring advanced electronics and the innovative E-Clutch system for a seamless and thrilling riding experience.')">
+    <img src="Images/cb750.jpg" alt="CB750">
+    <h3>Honda CB750 Hornet</h3>
+    <p>Middleweight naked with modern E-Clutch.</p>
+    <span class="model-price">₱529,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CB1000 Hornet SP', 'Images/cb1000sp.jpg', '₱650,000', 'As the high-performance evolution of the Hornet line, the SP variant boasts a CBR-derived engine and premium suspension for riders who demand ultimate street-fighter precision.')">
+    <img src="Images/cb1000sp.jpg" alt="CB1000 SP">
+    <h3>Honda CB1000 Hornet SP</h3>
+    <p>Sportier Hornet with CBR-derived power.</p>
+    <span class="model-price">₱650,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda NT1100 DCT', 'Images/nt1100.png', '₱835,000', 'The Honda NT1100 DCT is the perfect sport-touring companion, offering a smooth Dual-Clutch Transmission and weather protection designed for effortless long-distance travel.')">
+    <img src="Images/nt1100.png" alt="NT1100">
+    <h3>Honda NT1100 DCT</h3>
+    <p>Sport-touring luxury with DCT comfort.</p>
+    <span class="model-price">₱835,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda SCL500', 'Images/scl500.jpg', '₱389,000', 'Inspired by the iconic scramblers of the 1960s, the SCL500 combines a rugged retro aesthetic with a reliable 471cc twin engine for a unique and versatile urban ride.')">
+    <img src="Images/scl500.jpg" alt="SCL500">
+    <h3>Honda SCL500</h3>
+    <p>Modern scrambler with 60s heritage style.</p>
+    <span class="model-price">₱389,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Updated Rebel 300', 'Images/rebel300.jpg', '₱205,000', 'The updated Honda Rebel 300 features revised ergonomics and enhanced seat comfort, making it the most approachable and user-friendly cruiser for new riders.')">
+    <img src="Images/rebel300.jpg" alt="Rebel 300">
+    <h3>Updated Rebel 300</h3>
+    <p>Revised ergonomics for maximum comfort.</p>
+    <span class="model-price">₱205,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Updated Rebel 500', 'Images/rebel500.jpg', '₱399,000', 'A favorite among customizers, the updated Rebel 500 brings refreshed styling and improved ride quality to the iconic middleweight cruiser platform.')">
+    <img src="Images/rebel500.jpg" alt="Rebel 500">
+    <h3>Updated Rebel 500</h3>
+    <p>Refreshed styling on a classic platform.</p>
+    <span class="model-price">₱399,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CBR600RR (2026)', 'Images/cbr600rr.jpg', '₱720,000', 'The 2026 Honda CBR600RR returns with refined track-focused dynamics and a legendary 600cc supersport engine that screams performance at every turn.')">
+    <img src="Images/cbr600rr.jpg" alt="CBR600RR">
+    <h3>Honda CBR600RR (2026)</h3>
+    <p>Refined 600cc track-ready supersport.</p>
+    <span class="model-price">₱720,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CBR1000RR (2026)', 'Images/cbr1000rr.jpg', '₱1,650,000', 'The flagship 2026 CBR1000RR Superbike pushes the boundaries of engineering with massive horsepower and MotoGP-inspired electronics for the ultimate speed enthusiast.')">
+    <img src="Images/cbr1000rr.jpg" alt="CBR1000RR">
+    <h3>Honda CBR1000RR (2026)</h3>
+    <p>The updated 1000cc superbike flagship.</p>
+    <span class="model-price">₱1,650,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CB1000F (2026)', 'Images/cb1000f.jpg', '₱610,000', 'Merging retro aesthetics with a powerful inline-four engine, the 2026 CB1000F is a naked bike that offers a timeless look with modern-day performance.')">
+    <img src="Images/cb1000f.jpg" alt="CB1000F">
+    <h3>Honda CB1000F (2026)</h3>
+    <p>Classic retro style with modern tech.</p>
+    <span class="model-price">₱610,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda Trail125 (2026)', 'Images/trail125.jpg', '₱175,000', 'Rugged, utility-focused, and incredibly fun, the 2026 Trail125 is a mini-adventure bike that can tackle city potholes and dirt paths with ease.')">
+    <img src="Images/trail125.jpg" alt="Trail125">
+    <h3>Honda Trail125 (2026)</h3>
+    <p>Utility-driven mini adventure bike.</p>
+    <span class="model-price">₱175,000</span>
+</div>
+
+<div class="model-card motorcycle" onclick="openModal('Honda CB125R (2026)', 'Images/cb125r.jpg', '₱165,000', 'The 2026 CB125R refreshes the entry-level naked segment with bold new colors and a premium chassis that gives new riders a big-bike feel.')">
+    <img src="Images/cb125r.jpg" alt="CB125R">
+    <h3>Honda CB125R (2026)</h3>
+    <p>Entry-level naked with refreshed colors.</p>
+    <span class="model-price">₱165,000</span>
+</div>
+<div class="model-card motorcycle" onclick="openModal('Honda WN7 Electric', 'Images/wn7.jpg', '₱450,000', 'As Honda\'s first full-size electric motorcycle, the WN7 offers a futuristic ride with a 130km range and fast charging, leading the charge into a sustainable future.')">
+    <img src="Images/wn7.jpg" alt="WN7">
+    <h3>Honda WN7 (Electric)</h3>
+    <p>Full-size electric motorcycle for 2026.</p>
+    <span class="model-price">₱450,000</span>
+</div>
+  </div>
+ </main>            
+<div id="carModal" class="modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; padding: 20px;">
+    <div class="modal-content" style="background: #111; color: white; padding: 25px; border-radius: 15px; width: 90%; max-width: 850px; max-height: 85vh; overflow-y: auto; position: relative; border: 1px solid #ffd700; display: flex; flex-direction: column;">
+        
+        <span class="close-btn" onclick="closeModal()" style="position: absolute; right: 20px; top: 15px; font-size: 30px; color: #ffd700; cursor: pointer;">&times;</span>
+        
+        <div style="display: flex; gap: 25px; flex-wrap: wrap; margin-bottom: 20px;">
+            
+            <div style="flex: 1.2; min-width: 280px;">
+                <img id="modalImg" src="" alt="Car" style="width: 100%; border-radius: 10px; border: 1px solid #333;">
+                
+                <div id="thumbContainer" style="display: flex; gap: 10px; margin-top: 15px; overflow-x: auto; padding-bottom: 5px;">
+                    </div>
+            </div>
+
+            <div style="flex: 1; min-width: 250px;">
+                <h2 id="modalTitle" style="color: #ffd700; margin-top: 0; font-family: 'Oswald', sans-serif;"></h2>
+                <p id="modalPrice" style="font-size: 1.5rem; font-weight: bold; color: #fff; margin: 10px 0;"></p>
+                <button style="width: 100%; padding: 12px; background: #ffd700; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; color: black; margin-top: 10px;">INQUIRE NOW</button>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid #333; padding-top: 20px;">
+            <h3 style="color: #ffd700; margin-bottom: 15px;">FULL SPECIFICATIONS</h3>
+            <div id="modalDescription" style="color: #ccc; line-height: 1.8; font-size: 1rem;">
+                </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="social-icons">
+    <a href="https://www.facebook.com/hondaphil" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    
+    <a href="https://www.instagram.com/hondaphil" target="_blank"><i class="fab fa-instagram"></i></a>
+    
+    <a href="https://x.com/honda" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    
+    <a href="https://www.youtube.com/@hondaphil" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+<p class="disclaimer">This website is for educational purposes only.</p>
+</div>
+    </footer>
+
+    <script>
+    function openModal(name, imgSrc, price, longDesc) {
+        const modal = document.getElementById('carModal');
+        
+ 
+        document.getElementById('modalTitle').innerText = name;
+        document.getElementById('modalImg').src = imgSrc;
+        document.getElementById('modalPrice').innerText = price;
+        
+     
+        const descElement = document.getElementById('modalDescription');
+        if (longDesc.includes('|')) {
+            const list = longDesc.split('|').map(item => `<li>✅ ${item.trim()}</li>`).join('');
+            descElement.innerHTML = `<ul style="list-style:none; padding:0;">${list}</ul>`;
+        } else {
+            descElement.innerHTML = longDesc;
+        }
+
+        modal.style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById('carModal').style.display = "none";
+    }
+
+    
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('carModal')) {
+            closeModal();
+        }
+    }
+
+    function openCategory(category) {
+        document.getElementById('selection-screen').style.display = 'none';
+        document.getElementById('models-screen').style.display = 'block';
+        const mainTitle = document.querySelector('.models-title');
+        if (mainTitle) mainTitle.style.display = 'none';
+
+    
+        document.getElementById('category-description').innerText = descriptions[category] || descriptions['all'];
+        document.getElementById('category-label').innerText = category.toUpperCase() + " MODELS";
+
+        let x = document.getElementsByClassName("model-card");
+        let target = category === 'all' ? "" : category;
+        for (let i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+            if (x[i].className.indexOf(target) > -1) {
+                x[i].style.display = "block";
+            }
+        }
+        window.scrollTo(0, 0);
+    }
+
+    function goBack() {
+        document.getElementById('selection-screen').style.display = 'grid';
+        document.getElementById('models-screen').style.display = 'none';
+        const mainTitle = document.querySelector('.models-title');
+        if (mainTitle) mainTitle.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+   
+const vehicleGallery = {
+
+    
+    'Honda Civic RS': ['Images/civic-rs.jpg', 'Images/civic-rs2.png','Images/civic-rs3.png','Images/civic-rs4.png','Images/civic-rs5.png'],
+    'Honda Civic Hybrid': ['Images/civic-hybrid.jpg', 'Images/civic-hybrid1.png', 'Images/civic-hybrid2.png','Images/civic-hybrid3.png','Images/civic-hybrid4.png'],
+    'Honda Accord Hybrid': ['Images/accord-hybrid.jpg', 'Images/accord-hybrid1.png', 'Images/accord-hybrid2.png'
+        , 'Images/accord-hybrid3.png', 'Images/accord-hybrid4.png' ],
+    'Honda Clarity': ['Images/clarity.jpg', 'Images/clarity1.png', 'Images/clarity2.png',, 'Images/clarity3.png',, 'Images/clarity4.png'],
+    'Honda Insight': ['Images/insight.jpg', 'Images/insight1.png', 'Images/insight2.png'],
+    'Honda Amaze': ['Images/amaze.jpg', 'Images/amaze1.png', 'Images/amaze2.png','Images/amaze3.png'],
+    'Honda City': ['Images/city.png', 'Images/city1.png', 'Images/city2.png'],
+    'Honda Legend': ['Images/legend.jpg', 'Images/legend1.png', 'Images/legend2.png'],
+    'Honda Inspire': ['Images/inspire.jpg', 'Images/inspire1.png', 'Images/inspire2.png'],
+    'Honda Crider': ['Images/crider.jpg', 'Images/crider1.png', 'Images/crider2.png'],
+    'Honda Ballade': ['Images/ballade.jpg', 'Images/ballade1.png', 'Images/ballade2.png'],
+
+    
+    'Ridgeline Black Edition': ['Images/ridgeline-black.png'],
+    'Honda Acty Truck': ['Images/acty.jpg', 'Images/acty1.png', 'Images/acty2.png'],
+    'Honda Ridgeline': ['Images/ridgeline.jpg', 'Images/ridgeline1.png', 'Images/ridgeline2.png'],
+
+    
+'Honda Civic Type R (FL5)': ['Images/civic-typer.jpg', 'Images/civic-typer1.png', 'Images/civic-typer2.png'
+, 'Images/civic-typer3.png', 'Images/civic-typer4.png', 'Images/civic-typer5.png'],
+    'Honda City Hatchback RS': ['Images/city-hatchback.jpg', 'Images/city-hatchback1.png', 'Images/city-hatchback2.png','Images/city-hatchback3.png'],
+    'Honda Brio RS': ['Images/brio-rs.jpg', 'Images/brio-rs1.png', 'Images/brio-rs2.png', 'Images/brio-rs3.png'],
+    'Honda Jazz (JDM/Import)': ['Images/jazz.png', 'Images/jazz1.png', 'Images/jazz2.png'],
+    'Honda CR-Z': ['Images/crz.jpg', 'Images/crz1.png', 'Images/crz2.png'],
+    'Honda Life': ['Images/honda-life.jpeg', 'Images/honda-life1.png', 'Images/honda-life2.png'],
+    'Honda e:NP1 (Electric)': ['Images/enp1.jpg'],
+    'Honda N-One': ['Images/none.jpg', 'Images/none1.png', 'Images/none2.png'],
+
+   
+ 'Honda BR-V': ['Images/brv.jpg',  'Images/brv2.jpg'],
+    'Honda HR-V Turbo RS': ['Images/hrv.jpg', 'Images/hrv1.jpg', 'Images/hrv2.jpg'],
+    'Honda CR-V RS e:HEV': ['Images/crv-hybrid.jpg', 'Images/crv-hybrid1.jpg', 'Images/crv-hybrid2.jpg'],
+    'Honda WR-V': ['Images/wrv.jpg', 'Images/wrv1.jpg', 'Images/wrv2.jpg'],
+    'Honda ZR-V': ['Images/zrv.jpg', 'Images/zrv1.jpg', 'Images/zrv2.jpg'],
+    'Honda Pilot': ['Images/pilot.jpg', 'Images/pilot1.jpg', 'Images/pilot2.jpg'],
+    'Honda Passport TrailSport': ['Images/passport.jpg', 'Images/passport1.jpg'],
+    'Honda Prologue (EV)': ['Images/prologue.png'],
+
+  
+
+    'Honda Odyssey': ['Images/odyssey.jpg', 'Images/odyssey1.jpg', 'Images/odyssey2.jpg'],
+    'Honda StepWGN': ['Images/stepwgn.jpg', 'Images/stepwgn1.jpg'],
+    'Honda Freed': ['Images/freed.jpg', 'Images/freed1.jpg', 'Images/freed2.jpg'],
+    'Honda Mobilio RS': ['Images/mobilio.png', 'Images/mobilo1.jpg'],
+    'Honda BR-V VX SENSING': ['Images/brv-vx.jpg', 'Images/brv-vx1.jpg', 'Images/brv-vx2.jpg', 'Images/brv-vx3.jpg'],
+
+
+    'Honda Click 125': ['Images/click125.png', 'Images/click125-red.png', 'Images/click125-black.png',
+    'Images/click125-white.png','Images/click125-blue.png'],
+    'Honda Click 160': ['Images/click160.jpg', 'Images/click160-w.png', 'Images/click160-r.png', 'Images/click160-b.png', 'Images/click160-g.png'],
+    'Honda PCX 160': ['Images/pcx160.jpg', 'Images/pcx1601.png', 'Images/pcx1602.png', 'Images/pcx1603.png', 'Images/pcx1604.png'],
+    'Honda ADV 160': ['Images/adv160.jpg', 'Images/adv1601.png', 'Images/adv1602.png','Images/adv1603.png'],
+    'Honda Airblade 160': ['Images/airblade160.jpg', 'Images/airblade1601.png', 'Images/airblade1602.png'],
+    'Honda Genio': ['Images/genio.jpg', 'Images/genio1.png', 'Images/genio2.png', 'Images/genio3.png', 'Images/genio4.png','Images/genio5.png'],
+    'Honda BeAT': ['Images/beat.jpg', 'Images/beat1.png', 'Images/beat2.png','Images/beat3.png'],
+    'Honda Dio': ['Images/dio.jpg', 'Images/dio1.png', 'Images/dio2.png',],
+    'Honda Wave RSX': ['Images/waversx.jpg', 'Images/waversx1.png', 'Images/waversx2.png'],
+    'Honda XRM 125 DS': ['Images/xrmds.png', 'Images/xrmds1.png', 'Images/xrmds2.png'],
+    'Honda RS-X 150': ['Images/rsx150.jpg', 'Images/rsx1501.png', 'Images/rsx1502.png', 'Images/rsx1503.png'],
+    'Honda TMX 125 Alpha': ['Images/tmx125.jpg', 'Images/tmx1251.png', 'Images/tmx1252.png'],
+    'Honda TMX Supremo': ['Images/tmxsupremo.jpg', 'Images/tmxsupremo1.png', 'Images/tmxsupremo2.png'],
+    'Honda CB150X': ['Images/cb150x.jpg', 'Images/cb150x1.png', 'Images/cb150x2.png','Images/cb150x3.png'],
+    'Honda CB150R Streetster': ['Images/cb150r.jpg', 'Images/cb150r1.png', 'Images/cb150r2.png'],
+    'Honda CRF150L': ['Images/crf150l.jpg', 'Images/crf150l1.png'],
+    'Honda CRF300L': ['Images/crf300l.jpg', 'Images/crf300l1.png'],
+    'Honda CRF300 Rally': ['Images/crf300rally.jpg', 'Images/crf300rally1.png'],
+    'Honda XR150L': ['Images/xr150l.jpg', 'Images/xr150l1.png'],
+    'Honda Monkey 125': ['Images/monkey125.jpg', 'Images/monkey1251.png', 'Images/monkey1252.png'],
+    'Honda Dax 125': ['Images/dax125.jpg', 'Images/dax1251.png'],
+    'Honda Super Cub C125': ['Images/supercub.jpg', 'Images/supercub1.png'],
+    'Honda Grom': ['Images/grom.jpg', 'Images/grom.jpg', 'Images/grom1.png'],
+    'Honda CB750 Hornet': ['Images/cb750.jpg', 'Images/cb7501.png', 'Images/cb7502.png'],
+    'Honda CB1000 Hornet SP': ['Images/cb1000sp.jpg', 'Images/cb1000sp1.png', 'Images/cb1000sp2.png'],
+    'Honda NT1100 DCT': ['Images/nt1100.png', 'Images/nt11001.png', 'Images/nt11002.png'],
+    'Honda SCL500': ['Images/scl500.jpg', 'Images/scl5001.png', 'Images/scl5002.png'],
+    'Updated Rebel 300': ['Images/rebel300.jpg', 'Images/rebel3001.png', 'Images/rebel3002.png'],
+    'Updated Rebel 500': ['Images/rebel500.jpg', 'Images/rebel500.png', 'Images/rebel500.png'],
+    'Honda CBR600RR (2026)': ['Images/cbr600rr.jpg', 'Images/cbr600rr1.png', 'Images/cbr600rr2.png'],
+    'Honda CBR1000RR (2026)': ['Images/cbr1000rr.jpg', 'Images/cbr1000rr1.png', 'Images/cbr1000rr2.png'],
+    'Honda CB1000F (2026)': ['Images/cb1000f.jpg', 'Images/cb1000f1.png', 'Images/cb1000f2.png'],
+    'Honda Trail125 (2026)': ['Images/trail125.jpg', 'Images/trail1251.png', 'Images/trail1252.png'],
+    'Honda CB125R (2026)': ['Images/cb125r.jpg', 'Images/cb125r1.png', 'Images/cb125r2.png'],
+    'Honda WN7 (Electric)': ['Images/wn7.jpg'],
+};
+
+function openModal(name, defaultImg, price, description) {
+    const modal = document.getElementById('carModal');
+    const mainImg = document.getElementById('modalImg');
+    const thumbContainer = document.getElementById('thumbContainer');
+
+   
+    document.getElementById('modalTitle').innerText = name;
+    document.getElementById('modalPrice').innerText = price;
+    document.getElementById('modalDescription').innerText = description;
+    
+  
+    mainImg.src = defaultImg;
+
+  
+    thumbContainer.innerHTML = '';
+
+   
+    const images = vehicleGallery[name] || [defaultImg];
+
+    if (images.length > 1) {
+        images.forEach(imgSrc => {
+            const thumb = document.createElement('img');
+            thumb.src = imgSrc;
+            thumb.style.cssText = "width: 50px; height: 50px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid #333; flex-shrink: 0;";
+            
+            thumb.onclick = function() {
+                mainImg.src = imgSrc;
+                const allThumbs = thumbContainer.querySelectorAll('img');
+                allThumbs.forEach(t => t.style.borderColor = '#333');
+                thumb.style.borderColor = '#ffd700';
+            };
+            thumbContainer.appendChild(thumb);
+        });
+    }
+
+    modal.style.display = 'flex';  
+}
+function openCategory(category) {
+        
+        document.getElementById('selection-screen').style.display = 'none';
+        
+       
+        document.getElementById('models-screen').style.display = 'block';
+
+      
+        document.getElementById('category-label').innerText = category.toUpperCase();
+
+       
+        const models = document.querySelectorAll('.model-card');
+        models.forEach(model => {
+            if (category === 'all' || model.classList.contains(category)) {
+                model.style.display = 'flex';
+            } else {
+                model.style.display = 'none';
+            }
+        });
+    }
+
+    function goBack() {
+      
+        document.getElementById('models-screen').style.display = 'none';
+        document.getElementById('selection-screen').style.display = 'grid';
+    }
+</script>
+</body>
+</html>
+
